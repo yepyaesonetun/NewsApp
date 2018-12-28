@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#e4e4e4</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorWhite">#fff</color>
+    <color name="colorWhiteLittle">#eaeaea</color>
+
+    <color name="nav_un_selected">#9b9b9b</color>
+    <color name="nav_state_pressed">#ababab</color>
+
+    <color name="primary_text">#161616</color>
+    <color name="colorTextSourName">#0a1525</color>
+    <color name="secondary_text">#757575</color>
+    <color name="colorSourceNo">#1e3a81</color>
+</resources>

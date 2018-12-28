@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">NewsApp</string>
+    <string name="title_home">For You</string>
+    <string name="title_news_stand">News Stand</string>
+    <string name="title_head_line">Headlines</string>
+    <string name="lbl_double_back_to_exit">Please Back again to Exit</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

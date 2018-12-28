@@ -1,0 +1,66 @@
+ext {
+    minSdkVersion = 19
+    compileSdkVersion = 27
+    targetSdkVersion = 27
+
+    // Android
+    androidSupportVersion = "27.1.1"
+    supportDesignVersion = "27.1.1"
+    constraintLayoutVersion = "1.1.2"
+    retrofitVersion = "2.4.0"
+    gsonVersion = "2.8.5"
+    glideVersion = "4.7.1"
+    lifeCycleVersion = "1.1.1"
+    roomVersion = "1.1.1"
+    rxJavaVersion = "2.1.16"
+    rxJavaAdapterVersion = "2.4.0"
+    rxAndroidVersion = "2.0.2"
+    chromeCustomTabVersion = "1.1.2"
+    aboutLibVersion = "6.0.9"
+    timeAgoLibVersion = "4.0.1"
+
+    // Testing
+    junitVersion = "4.12"
+    supportTestVersion = "1.0.2"
+    espressoVersion = "3.0.2"
+
+    libraries = [
+            appCompat        : "com.android.support:appcompat-v7:${androidSupportVersion}",
+            supportDesign    : "com.android.support:design:${supportDesignVersion}",
+            supportv4        : "com.android.support:support-v4:${androidSupportVersion}",
+            cardView         : "com.android.support:cardview-v7:${androidSupportVersion}",
+            recyclerView     : "com.android.support:recyclerview-v7:${androidSupportVersion}",
+            constraintLayout : "com.android.support.constraint:constraint-layout:${constraintLayoutVersion}",
+            retrofit         : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            retrofitConverter: "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+            retrofitAdapter  : "com.squareup.retrofit2:adapter-rxjava:${retrofitVersion}",
+            rxAndroid        : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+            rxJava           : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+            rxAdapter        : "com.squareup.retrofit2:adapter-rxjava2:${rxJavaAdapterVersion}",
+            glide            : "com.github.bumptech.glide:glide:${glideVersion}",
+            gson             : "com.google.code.gson:gson:${gsonVersion}",
+            customTab        : "saschpe.android:customtabs:${chromeCustomTabVersion}",
+            aboutLib         : "com.mikepenz:aboutlibraries:${aboutLibVersion}",
+            timeAgo          : "com.github.marlonlom:timeago:${timeAgoLibVersion}",
+    ]
+
+    aptLibraries = [
+            glideCompiler    : "com.github.bumptech.glide:compiler:${glideVersion}",
+            lifeCycleCompiler: "android.arch.lifecycle:compiler:${lifeCycleVersion}",
+            roomCompiler     : "android.arch.persistence.room:compiler:${roomVersion}",
+    ]
+
+    apiLibraries = [
+            lifeCycleExtensions: "android.arch.lifecycle:extensions:${lifeCycleVersion}",
+            roomRuntime        : "android.arch.persistence.room:runtime:${roomVersion}",
+    ]
+
+    testLibraries = [
+            junit             : "junit:junit:${junitVersion}",
+            supportAnnotations: "com.android.support:support-annotations:${androidSupportVersion}",
+            supportTestRunner : "com.android.support.test:runner:${supportTestVersion}",
+            supportTestRules  : "com.android.support.test:rules:${supportTestVersion}",
+            espresso          : "com.android.support.test.espresso:espresso-core:${espressoVersion}",
+            espressoContrib   : "com.android.support.test.espresso:espresso-contrib:${espressoVersion}",
+    ]
+}

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:paddingBottom="@dimen/margin_medium"
+                android:paddingTop="@dimen/margin_medium_2"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_height="wrap_content">
+
+    <TextView
+            android:id="@+id/tvSourceName"
+            android:text="ABC News"
+            android:paddingTop="@dimen/margin_medium"
+            android:textSize="@dimen/text_smaller"
+            android:fontFamily="@font/helvetica_neue_medium"
+            android:paddingStart="@dimen/margin_medium_3"
+            android:textStyle="bold"
+            android:textColor="@color/colorTextSourName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:id="@+id/tvNewsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/primary_text"
+            android:fontFamily="@font/helvetica_neue_medium"
+            android:lineSpacingMultiplier="1.2"
+            android:textSize="@dimen/text_regular_2xx"
+            android:layout_below="@id/tvSourceName"
+            android:paddingTop="@dimen/margin_medium_3"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/margin_medium_3"
+            android:ellipsize="end"
+            android:text="Russia space agency chief: We'll verify US moon landings"
+            android:maxLines="2"
+            android:layout_toStartOf="@+id/cvNewsImage"
+            android:layout_marginEnd="@dimen/margin_medium"/>
+
+    <android.support.v7.widget.CardView
+            android:id="@+id/cvNewsImage"
+            android:layout_width="wrap_content"
+            app:cardCornerRadius="@dimen/margin_medium"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/margin_medium_3"
+            android:layout_marginTop="@dimen/margin_medium_3"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:layout_height="wrap_content">
+        <ImageView
+                android:id="@+id/ivNews"
+                android:visibility="gone"
+                android:src="@drawable/news_logo"
+                android:layout_width="90dp"
+                android:layout_height="90dp"/>
+    </android.support.v7.widget.CardView>
+
+    <TextView
+            android:id="@+id/tvPublishedDate"
+            android:text="12 dd mm"
+            android:layout_below="@id/cvNewsImage"
+            android:paddingStart="@dimen/margin_medium_3"
+            android:textSize="@dimen/text_smaller"
+            android:paddingTop="@dimen/margin_small"
+            android:textColor="@color/secondary_text"
+            android:fontFamily="@font/helvetica_neue_light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+</RelativeLayout>

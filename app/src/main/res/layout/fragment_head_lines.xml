@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.HomeFragment">
+    <TextView
+            android:id="@+id/tvTodayTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Today"
+            android:fontFamily="@font/helvetica_neue_medium"
+            android:textStyle="bold"
+            android:paddingTop="@dimen/margin_large"
+            android:paddingStart="@dimen/margin_medium_2"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/text_regular_3x"/>
+
+    <ImageView
+            android:id="@+id/ivNewsLogo"
+            android:src="@drawable/news_logo"
+            android:scaleType="fitCenter"
+            android:layout_toEndOf="@id/tvTodayTitle"
+            android:layout_width="60dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:layout_above="@+id/tvTodayDate"/>
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:id="@+id/tvTodayDate"
+              android:paddingStart="@dimen/margin_medium_2"
+              android:paddingTop="@dimen/margin_large"
+              android:textColor="@color/primary_text"
+              android:fontFamily="@font/helvetica_neue_medium"
+              android:textStyle="bold"
+              android:layout_below="@id/tvTodayTitle"
+              android:text="Top Headlines"
+              android:paddingBottom="@dimen/margin_medium"
+              android:textAllCaps="true"
+              android:textSize="@dimen/text_regular_2x"/>
+
+    <FrameLayout android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentEnd="true"
+                 android:layout_marginEnd="@dimen/margin_large"
+                 android:layout_marginTop="@dimen/margin_large"
+                 android:layout_alignBaseline="@id/ivNewsLogo">
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_search_black_24dp"
+                android:tint="@color/secondary_text"
+                android:padding="@dimen/margin_medium"
+                android:id="@+id/ivSearch"/>
+    </FrameLayout>
+
+    <com.ypst.primeyz.newsapp.components.SmartRecyclerView
+            android:layout_below="@id/tvTodayDate"
+            android:layout_width="match_parent"
+            android:id="@+id/rvHeadLinesCategory"
+            android:clipToPadding="false"
+            android:paddingStart="@dimen/margin_medium_2"
+            android:paddingEnd="@dimen/margin_medium_2"
+            android:layout_height="wrap_content"/>
+
+    <com.ypst.primeyz.newsapp.components.SmartRecyclerView
+            android:layout_below="@id/rvHeadLinesCategory"
+            android:layout_width="match_parent"
+            android:id="@+id/rvNews"
+            android:layout_height="match_parent"/>
+</RelativeLayout>

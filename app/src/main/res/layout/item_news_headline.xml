@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+                android:paddingTop="@dimen/margin_medium"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:paddingBottom="@dimen/margin_large"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:id="@+id/tvTitle"
+              android:layout_below="@id/tvTodayDate"
+              android:paddingTop="@dimen/margin_small"
+              android:paddingBottom="@dimen/margin_small"
+              android:paddingStart="@dimen/margin_medium_3"
+              android:textSize="@dimen/text_small"
+              android:fontFamily="@font/helvetica_neue_light"
+              android:textColor="@color/secondary_text"
+              android:text="Latest News in US"/>
+
+
+    <android.support.v7.widget.CardView
+            android:layout_below="@id/tvTitle"
+            android:layout_width="match_parent"
+            android:id="@+id/cvNewsImage"
+            android:layout_marginStart="@dimen/margin_medium_3"
+            android:layout_marginEnd="@dimen/margin_medium_3"
+            app:cardCornerRadius="@dimen/margin_medium"
+            android:elevation="0dp"
+            android:layout_height="wrap_content">
+        <ImageView
+                android:id="@+id/ivNews"
+                android:src="@drawable/news_logo"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"/>
+    </android.support.v7.widget.CardView>
+
+
+    <TextView
+            android:id="@+id/tvSourceName"
+            android:layout_below="@id/cvNewsImage"
+            android:text="ABC News"
+            android:paddingStart="@dimen/margin_medium_3"
+            android:textSize="@dimen/text_smaller"
+            android:paddingTop="@dimen/margin_medium"
+            android:paddingBottom="@dimen/margin_small"
+            android:textColor="@color/secondary_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    <TextView
+            android:id="@+id/tvHeadLine"
+            android:text="HeadLine"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_smaller"
+            android:fontFamily="@font/helvetica_neue_medium"
+            android:textColor="@color/primary_text"
+            android:layout_below="@id/tvSourceName"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium_3"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:id="@+id/tvNewsTitle"
+            android:textColor="@color/primary_text"
+            android:text="US soldier killed in Afghanistan"
+            android:textSize="@dimen/text_regular_3x"
+            android:paddingTop="@dimen/margin_small"
+            android:layout_below="@id/tvHeadLine"
+            android:fontFamily="@font/helvetica_neue_light"
+            android:paddingStart="@dimen/margin_medium_3"
+            android:textStyle="bold"
+            android:paddingEnd="@dimen/margin_medium_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:id="@+id/tvPublishedDate"
+            tools:text="12 hours ago"
+            android:layout_below="@id/tvNewsTitle"
+            android:paddingTop="@dimen/margin_medium"
+            android:paddingStart="@dimen/margin_medium_3"
+            android:textSize="@dimen/text_smaller"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+</RelativeLayout>

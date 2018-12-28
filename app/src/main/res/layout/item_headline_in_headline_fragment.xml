@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        android:layout_below="@id/tvTitle"
+        android:layout_width="match_parent"
+        android:id="@+id/cvNewsImage"
+        android:layout_marginStart="@dimen/margin_medium_3"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:layout_marginEnd="@dimen/margin_medium_3"
+        app:cardCornerRadius="@dimen/margin_medium"
+        android:elevation="0dp"
+        android:layout_height="250dp">
+
+    <RelativeLayout android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+        <ImageView
+                android:id="@+id/ivNews"
+                android:src="@drawable/news_logo"
+                android:layout_width="match_parent"
+                android:foreground="@drawable/gradient_overlay"
+                android:layout_above="@id/flViewMore"
+                android:layout_height="match_parent"/>
+
+        <TextView
+                android:id="@+id/tvSourceName"
+                tools:text="Source name"
+                android:textColor="@color/colorWhiteLittle"
+                android:paddingStart="@dimen/margin_medium"
+                android:fontFamily="@font/helvetica_neue_medium"
+                android:textSize="@dimen/text_small"
+                android:layout_above="@id/tvNewsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <TextView
+                android:id="@+id/tvPublishedDate"
+                android:textSize="@dimen/text_smaller"
+                tools:text="12 hours ago"
+                android:textColor="@color/colorWhiteLittle"
+                android:layout_width="wrap_content"
+                android:layout_toEndOf="@id/tvSourceName"
+                android:paddingStart="@dimen/margin_medium"
+                android:layout_alignBaseline="@id/tvSourceName"
+                android:layout_height="wrap_content"/>
+        <TextView
+                android:id="@+id/tvNewsTitle"
+                tools:text="7 Expenses That Can Eat Into Your Retirement Savings"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/text_regular_2x"
+                android:paddingStart="@dimen/margin_medium"
+                android:paddingBottom="@dimen/margin_medium"
+                android:paddingTop="@dimen/margin_medium"
+                android:fontFamily="@font/helvetica_neue_medium"
+                android:textStyle="bold"
+                android:paddingEnd="@dimen/margin_medium"
+                android:lineSpacingMultiplier="1.2"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:layout_above="@id/flViewMore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <FrameLayout
+                android:id="@+id/flViewMore"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="@drawable/bg_ripple_accent"
+                android:padding="@dimen/margin_medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                    android:id="@+id/tvViewDetail"
+                    android:drawableRight="@drawable/ic_more"
+                    android:drawableTint="@color/colorAccent"
+                    android:drawablePadding="@dimen/margin_large"
+                    android:text="View Full Coverage"
+                    android:layout_width="wrap_content"
+                    android:padding="@dimen/margin_medium"
+                    android:background="@color/colorWhite"
+                    android:textSize="@dimen/text_small"
+                    android:textColor="@color/primary_text"
+                    android:fontFamily="@font/helvetica_neue_medium"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"/>
+        </FrameLayout>
+
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
+

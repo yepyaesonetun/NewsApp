@@ -1,0 +1,108 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-kapt'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'org.moallemi.advanced-build-version'
+
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.+'
+    }
+}
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+}
+
+advancedVersioning {
+    nameOptions {
+        versionMajor 0
+        versionMinor 0
+        versionPatch 1
+    }
+    codeOptions {
+        versionCodeType org.moallemi.gradle.internal.VersionCodeType.AUTO_INCREMENT_ONE_STEP
+        dependsOnTasks 'release'
+    }
+    outputOptions {
+        renameOutput true
+        nameFormat 'NewsApp-v${versionName}'
+    }
+}
+
+def appVersionName = advancedVersioning.versionName
+def appVersionCode = advancedVersioning.versionCode
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    defaultConfig {
+        applicationId "com.ypst.primeyz.newsapp"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode appVersionCode
+        versionName appVersionName
+        buildConfigField 'String', 'NEWS_API_KEY', "\"${theNewsApiKey}\""
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    // support libraries
+    implementation rootProject.ext.libraries.appCompat
+    implementation rootProject.ext.libraries.cardView
+    implementation rootProject.ext.libraries.supportDesign
+    implementation rootProject.ext.libraries.recyclerView
+    implementation rootProject.ext.libraries.constraintLayout
+    implementation rootProject.ext.libraries.supportv4
+
+    // glide image loading
+    implementation rootProject.ext.libraries.glide
+    implementation 'com.android.support:support-v4:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    kapt rootProject.ext.aptLibraries.glideCompiler
+
+    // G_son and retrofit
+    compile rootProject.ext.libraries.gson
+    implementation rootProject.ext.libraries.retrofit
+    compile rootProject.ext.libraries.retrofitConverter
+
+    api rootProject.ext.apiLibraries.lifeCycleExtensions
+    kapt rootProject.ext.aptLibraries.lifeCycleCompiler
+
+    api rootProject.ext.apiLibraries.roomRuntime
+    kapt rootProject.ext.aptLibraries.roomCompiler
+
+    implementation rootProject.ext.libraries.rxAdapter
+    implementation rootProject.ext.libraries.rxJava
+    implementation rootProject.ext.libraries.rxAndroid
+
+    compile rootProject.ext.libraries.customTab
+    compile rootProject.ext.libraries.timeAgo
+
+    compile('com.crashlytics.sdk.android:crashlytics:2.9.4@aar') {
+        transitive = true;
+    }
+
+    testImplementation rootProject.ext.testLibraries.junit
+    androidTestImplementation rootProject.ext.testLibraries.supportTestRunner
+    androidTestImplementation rootProject.ext.testLibraries.espresso
+}
